@@ -1204,3 +1204,88 @@
 </script>
 </body>
 </html>
+
+<style>
+body {
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding-bottom: 120px; /* Adds space so content doesn't hide behind the button */
+}
+
+.button-container {
+  position: absolute;
+  bottom: 40px; /* Adjust this to change distance from the bottom */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+  .deco-button {
+    display: inline-block;
+    padding: 18px 48px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #1a1a1a;
+    background: linear-gradient(135deg, #f9e866 0%, #d4af37 25%, #f9e866 50%, #d4af37 75%, #f9e866 100%);
+    background-size: 200% 200%;
+    border: 3px solid #1a1a1a;
+    box-shadow: 
+      0 0 0 2px #d4af37,
+      0 0 0 5px #1a1a1a,
+      6px 6px 0 #d4af37;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .deco-button::before,
+  .deco-button::after {
+    content: '✦';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #1a1a1a;
+  }
+
+  .deco-button::before {
+    left: 12px;
+  }
+
+  .deco-button::after {
+    right: 12px;
+  }
+
+  .deco-button:hover {
+    background-position: 100% 100%;
+    box-shadow: 
+      0 0 0 2px #f9e866,
+      0 0 0 5px #1a1a1a,
+      8px 8px 0 #f9e866,
+      0 0 30px rgba(212, 175, 55, 0.5);
+    transform: translate(-2px, -2px);
+  }
+
+  .deco-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 
+      0 0 0 2px #d4af37,
+      0 0 0 5px #1a1a1a,
+      2px 2px 0 #d4af37;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+</style>
+
+<div class="button-container">
+  <a href="YOUR_LINK_HERE" class="deco-button">» Click Here, Love! «</a>
+</div>
